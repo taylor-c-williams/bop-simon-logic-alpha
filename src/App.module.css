@@ -1,8 +1,8 @@
 .main {
-  display:flex;
-  --s: 100px;  /* size  */
-  --m: 4px;    /* margin */
-  --f: calc(1.732 * var(--s) + 4 * var(--m)  - 1px);
+  display: flex;
+  --s: 100px; /* size  */
+  --m: 4px; /* margin */
+  --f: calc(1.732 * var(--s) + 4 * var(--m) - 1px);
 }
 
 .container {
@@ -13,13 +13,13 @@
 .container div {
   width: var(--s);
   margin: var(--m);
-  height: calc(var(--s)*1.1547); 
+  height: calc(var(--s) * 1.1547);
   display: inline-block;
-  font-size:initial;
+  font-size: initial;
   clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
-  background: #9e6a91;
-  margin-bottom: calc(var(--m) - var(--s)*0.2885); 
-  transition: all .2s ease-in-out;
+  /* background: #9e6a91; */
+  margin-bottom: calc(var(--m) - var(--s) * 0.2885);
+  transition: all 0.2s ease-in-out;
 }
 
 .container div:hover {
@@ -27,26 +27,39 @@
 }
 
 .container div:nth-child(2) {
-  background:#A3B9C9;
+  background: #a3b9c9;
 }
 
 .container div:nth-child(3) {
-  background:#a3c9b2;
+  background: #a3c9b2;
 }
 
 .container div:nth-child(4) {
-  background:#c295cf;
+  background: #c295cf;
 }
 
 .container div:nth-child(5) {
-  background:#db5b8c;
+  background: #db5b8c;
 }
 .container::before {
-  content: "";
-  width: calc(var(--s)/2 + var(--m));
+  content: '';
+  width: calc(var(--s) / 2 + var(--m));
   float: left;
   height: 120%;
-  shape-outside: repeating-linear-gradient(     
-                   #0000 0 calc(var(--f) - 3px),      
-                   #000  0 var(--f));
+  shape-outside: repeating-linear-gradient(
+    #0000 0 calc(var(--f) - 3px),
+    #000 0 var(--f)
+  );
+}
+
+.activeKey {
+  background-color: black;
+}
+
+.c4Hex {
+  background-color: yellow;
+}
+
+button:active {
+  background-color: aqua;
 }
