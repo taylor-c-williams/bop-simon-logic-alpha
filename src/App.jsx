@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 function App() {
   // const [start, setStart] = useState(false);
-  const [isActive, setIsActive] = useState(false);
+  // const [isActive, setIsActive] = useState(false);
 
   //useEffect > tone.start
   const synthSounds = {
@@ -21,14 +21,16 @@ function App() {
   const limiter = new Tone.Limiter(-2);
   const synth = new Tone.Synth(synthSounds).chain(limiter, Tone.Master);
 
-  async function playNote(note) {
+  function playNote(note) {
     const element = document.getElementById(note);
     const noteFreq = Tone.Frequency(note);
     element.style.opacity = '.2';
+    element.style.backgroundColor = 'red'
     synth.triggerAttackRelease(noteFreq, '2n');
-    await setTimeout(() => {
+    setTimeout(() => {
       element.style.opacity = '1';
-    }, 3000);
+      element.style.backgroundColor='blue'
+    }, 1000);
   }
 
   function playInterval(notes) {
